@@ -13,9 +13,9 @@ const { data } = useTicketData();
           {data?.map(ticketData => <Card id={ticketData.id}
                                         title={ticketData.title}
                                         client_id={ticketData.client_id}
-                                        opening_date={ticketData.opening_date}
-                                        closing_date={ticketData.closing_date}
-                                        model_id={ticketData.model_id} />)}
+                                         open_date={ticketData.open_date}
+                                        close_date={ticketData.close_date}
+                                        module_id={ticketData.module_id} />)}
 
       </div>
     </>
