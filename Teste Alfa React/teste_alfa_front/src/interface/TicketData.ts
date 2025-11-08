@@ -1,8 +1,8 @@
 export interface TicketData{
     id : number,
     title : string,
-    client_id : number,
-    open_date : string,
-    close_date : string,
-    module_id : number
+    fk_id_client : number,
+    opening_date : string,
+    closing_date : string,
+    fk_id_module : number
 }

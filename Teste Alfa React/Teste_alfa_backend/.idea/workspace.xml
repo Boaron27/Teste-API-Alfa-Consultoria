@@ -4,52 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11aa7487-802a-419d-b0cb-86cb81e49c99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../.idea/Teste alfa.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/table/ApiTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alfa/build/api/ApiApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/CorsConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/controller/ApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Modulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/model/Modulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/model/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/repository/ClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/ModuleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/repository/ModuleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/TicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/repository/TicketRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/ServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/service/ServletInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/TicketApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/TicketApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/TicketRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/service/TicketRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/TicketResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/service/TicketResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/table/ApiTable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/alfa/build/api/ApiApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alfa/build/api/ApiApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config/CorsConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ApiController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/TicketController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Cliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Modulo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Ticket.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repository/ClientRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repository/ModuleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repository/TicketRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/ServletInitializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/TicketApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/TicketRequestDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/TicketResponseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/table/ApiTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/components/card/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/src/components/card/card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/hooks/useTicketData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/src/hooks/useTicketData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/interface/TicketData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/src/interface/TicketData.ts" afterDir="false" />
-    </list>
+    <list default="true" id="11aa7487-802a-419d-b0cb-86cb81e49c99" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,7 +120,7 @@
       <workItem from="1762570393354" duration="1444000" />
       <workItem from="1762571857222" duration="2045000" />
       <workItem from="1762579664384" duration="4355000" />
-      <workItem from="1762614487033" duration="3746000" />
+      <workItem from="1762614487033" duration="4054000" />
     </task>
     <servers />
   </component>
