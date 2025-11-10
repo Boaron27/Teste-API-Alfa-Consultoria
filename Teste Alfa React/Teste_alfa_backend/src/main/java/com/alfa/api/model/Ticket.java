@@ -24,16 +24,23 @@ public class Ticket {
     private String title;
     private LocalDate opening_date;
     private LocalDate closing_date;
-    private String fk_id_client;
-    private String fk_id_module;
+    @ManyToOne
+    @JoinColumn(name = "fk_id_client")
+    private Cliente client;
+    @ManyToOne
+    @JoinColumn(name = "fk_id_module")
+    private Modulo module;
 
     public Ticket(TicketRequestDTO data, ClientRepository clientRepository, ModuleRepository moduleRepository) {
         this.id = data.id();
         this.title = data.title();
-        this.fk_id_client = String.valueOf(data.fk_id_client());
         this.opening_date = LocalDate.parse(data.opening_date());
         this.closing_date = LocalDate.parse(data.closing_date());
-        this.fk_id_module = String.valueOf(data.fk_id_module());
+        this.client = clientRepository.findById(data.fk_id_client())
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado: " + data.fk_id_client()));
+        this.module = moduleRepository.findById(data.fk_id_module())
+                .orElseThrow(() -> new RuntimeException("Módulo não encontrado: " + data.fk_id_module()));
+
     }
 
     public long getId() {
@@ -68,19 +75,19 @@ public class Ticket {
         this.closing_date = closing_date;
     }
 
-    public String getFk_id_client() {
-        return fk_id_client;
+    public Cliente getClient() {
+        return client;
     }
 
-    public void setFk_id_client(String fk_id_client) {
-        this.fk_id_client = fk_id_client;
+    public void setClient(Cliente client) {
+        this.client = client;
     }
 
-    public String getFk_id_module() {
-        return fk_id_module;
+    public Modulo getModule() {
+        return module;
     }
 
-    public void setFk_id_module(String fk_id_module) {
-        this.fk_id_module = fk_id_module;
+    public void setModule(Modulo module) {
+        this.module = module;
     }
 }

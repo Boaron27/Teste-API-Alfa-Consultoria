@@ -14,10 +14,10 @@ public record TicketResponseDTO(
         this(
                 ticket.getId(),
                 ticket.getTitle(),
-                ticket.getFk_id_client(),
+                ticket.getClient().getName(),
                 ticket.getOpening_date().toString(),
                 ticket.getClosing_date().toString(),
-                ticket.getFk_id_module()
+                ticket.getModule().getName()
         );
     }
 }
