@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11aa7487-802a-419d-b0cb-86cb81e49c99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../teste_alfa_front/src/chart_pie.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../teste_alfa_front/src/components/card/Ticketcard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alfa/api/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/model/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alfa/api/service/TicketResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/service/TicketResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alfa/api/service/TicketRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/service/TicketRequestDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../teste_alfa_front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../teste_alfa_front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/components/card/card.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/components/card/Ticketcard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/src/components/card/Ticketcard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +129,10 @@
       <workItem from="1762579664384" duration="4355000" />
       <workItem from="1762614487033" duration="4648000" />
       <workItem from="1762737924263" duration="3846000" />
+      <workItem from="1762783026699" duration="4943000" />
+      <workItem from="1762791577360" duration="818000" />
+      <workItem from="1762794972840" duration="626000" />
+      <workItem from="1762796063977" duration="1579000" />
     </task>
     <servers />
   </component>

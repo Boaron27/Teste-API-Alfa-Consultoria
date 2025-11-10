@@ -19,7 +19,8 @@ import java.time.LocalDate;
 @EqualsAndHashCode(of = "id")
 @Entity
 public class Ticket {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
     private LocalDate opening_date;
@@ -32,7 +33,6 @@ public class Ticket {
     private Modulo module;
 
     public Ticket(TicketRequestDTO data, ClientRepository clientRepository, ModuleRepository moduleRepository) {
-        this.id = data.id();
         this.title = data.title();
         this.opening_date = LocalDate.parse(data.opening_date());
         this.closing_date = LocalDate.parse(data.closing_date());

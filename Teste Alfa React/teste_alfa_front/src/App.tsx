@@ -1,30 +1,59 @@
 import './App.css'
 
 import {useTicketData} from "./hooks/useTicketData.ts";
-import {ChartPieClients, Ticketcard} from "@/components/card/Ticketcard.tsx";
+import {TicketTable} from "@/components/card/Ticketcard.tsx";
+import {ChartPieGeneric} from "@/components/card/Ticketcard.tsx";
 
 function App() {
 
-const { data } = useTicketData();
+const {data: data} = useTicketData();
 
-  return (
+    return (
     <>
-        {/* Gráfico de Pizza - Tickets por Cliente */}
+
         {data && data.length > 0 && (
-            <div style={{ marginBottom: "2rem" }}>
-                <ChartPieClients data={data.map(ticket => ({ client_id: String(ticket.fk_id_client) }))} />
+            <div
+                style={{display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", justifyItems: "center", width: "100vw",gap: "4rem",}}>
+
+                <ChartPieGeneric
+                    data={data}
+                    groupBy="fk_id_client"
+                    title="Chamados Por Cliente"
+                />
+
+                <ChartPieGeneric
+                    data={data}
+                    groupBy="fk_id_module"
+                    title="Chamados Por Módulo"
+                />
             </div>
         )}
 
-      <div className="container">
-          {data?.map(ticketData => <Ticketcard id={ticketData.id}
-                                               title={ticketData.title}
-                                               client_id={ticketData.fk_id_client}
-                                               open_date={ticketData.opening_date}
-                                               close_date={ticketData.closing_date}
-                                               module_id={ticketData.fk_id_client} />)}
+        <div
+            style={{
+                display: "flex",
+                justifyContent: "flex-start", // garante que o conteúdo vai pra esquerda
+                width: "100%",
+                margin: 0,
+                padding: "0 2rem",
+            }}
+        >
+            <div style={{ width: "100%", maxWidth: "1200px" }}>
+                <TicketTable
+                    data={
+                        data?.map((ticket) => ({
+                            id: ticket.id,
+                            title: ticket.title,
+                            client_id: String(ticket.fk_id_client),
+                            open_date: ticket.opening_date,
+                            close_date: ticket.closing_date,
+                            module_id: String(ticket.fk_id_module),
+                        })) ?? []
+                    }
+                />
+            </div>
+        </div>
 
-      </div>
     </>
   )
 }
