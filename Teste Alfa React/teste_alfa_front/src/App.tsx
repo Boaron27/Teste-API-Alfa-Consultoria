@@ -1,8 +1,8 @@
 import './App.css'
 
 import {useTicketData} from "./hooks/useTicketData.ts";
-import {TicketTable} from "@/components/card/Ticketcard.tsx";
-import {ChartPieGeneric} from "@/components/card/Ticketcard.tsx";
+import {TicketTable} from "@/components/dashboard/TicketDashboard.tsx";
+import {ChartPieGeneric} from "@/components/dashboard/TicketDashboard.tsx";
 import {useState} from "react";
 
 function App() {

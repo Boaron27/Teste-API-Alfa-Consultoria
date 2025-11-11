@@ -94,9 +94,9 @@ export function TicketTable({ data }: { data: Ticket[] }) {
         }
 
         try {
-            setErrorMessage("") // limpa erros antigos
+            setErrorMessage("")
 
-            // Busca listas de clientes e módulos válidos
+
             const [clientsRes, modulesRes] = await Promise.all([
                 fetch("http://localhost:8080/client"),
                 fetch("http://localhost:8080/module")
@@ -112,7 +112,7 @@ export function TicketTable({ data }: { data: Ticket[] }) {
             const clientIds = clients.map((c: Client) => String(c.id))
             const moduleIds = modules.map((m: Module) => String(m.id))
 
-            // Validação de integridade
+
             if (!clientIds.includes(novoChamado.fk_id_client)) {
                 setErrorMessage("⚠️ O ID de cliente informado não existe.")
                 return
@@ -123,7 +123,7 @@ export function TicketTable({ data }: { data: Ticket[] }) {
                 return
             }
 
-            // Envia o chamado se tudo for válido
+
             const res = await fetch("http://localhost:8080/ticket", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -321,7 +321,7 @@ export function ChartPieGeneric<T extends { opening_date?: string; closing_date?
                                                                                            mesSelecionado = "",
                                                                                        }: ChartPieGenericProps<T>) {
 
-    // 🔹 aplica o filtro de mês aqui dentro
+
     const dataFiltrada = useMemo(() => {
         if (!mesSelecionado) return data
         const indiceMes = MESES.indexOf(mesSelecionado) + 1
@@ -335,7 +335,6 @@ export function ChartPieGeneric<T extends { opening_date?: string; closing_date?
 
 
 
-    // 🔹 agrupa normalmente
     const grouped = dataFiltrada.reduce((acc, item) => {
         const key = String(item[groupBy] ?? "Desconhecido")
         acc[key] = (acc[key] || 0) + 1
@@ -347,9 +346,11 @@ export function ChartPieGeneric<T extends { opening_date?: string; closing_date?
 
     return (
         <div style={{ display: "grid", gap: "1rem" }}>
-            <h3 style={{ margin: 0, textAlign: "center", fontWeight: "bold" }}>
-                {title}
-            </h3>
+            {dataFiltrada.length > 0 && (
+                <h3 style={{ margin: 0, textAlign: "center", fontWeight: "bold" }}>
+                    {title}
+                </h3>
+            )}
 
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "2rem" }}>
                 <div style={{ width: 300, height: 300 }}>

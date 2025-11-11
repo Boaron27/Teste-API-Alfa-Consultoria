@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11aa7487-802a-419d-b0cb-86cb81e49c99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/controller/ClientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/controller/ModuleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/service/ClientResponseDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/service/ModuleResponseDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alfa/api/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alfa/api/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alfa/api/model/Modulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/model/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alfa/api/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/model/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alfa/api/repository/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/repository/ClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alfa/api/repository/ModuleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alfa/api/repository/ModuleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alfa/api/table/ApiTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/alfa/api/table/ApiTable.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/chart_pie.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/components/card/Ticketcard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/src/components/dashboard/TicketDashboard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,38 +43,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.TicketApplication.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gabri/Desktop/Teste alfa/Teste Alfa React/Teste_alfa_backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Notification.DisplayName-DoNotAsk-DatabaseConfigFileWatcher.found": "New/updated database configurations found",
+    "Notification.DoNotAsk-DatabaseConfigFileWatcher.found": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiApplication.executor": "Run",
+    "Spring Boot.TicketApplication.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/gabri/Desktop/Teste alfa/Teste Alfa React/Teste_alfa_backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gabri\Desktop\Teste alfa\Teste-Alfa-API\src\main\resources\static" />
@@ -147,6 +141,7 @@
       <workItem from="1762794972840" duration="626000" />
       <workItem from="1762796063977" duration="6577000" />
       <workItem from="1762828896752" duration="4933000" />
+      <workItem from="1762871781775" duration="1099000" />
     </task>
     <servers />
   </component>
