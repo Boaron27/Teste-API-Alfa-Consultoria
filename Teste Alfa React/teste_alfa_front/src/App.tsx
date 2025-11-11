@@ -3,10 +3,15 @@ import './App.css'
 import {useTicketData} from "./hooks/useTicketData.ts";
 import {TicketTable} from "@/components/card/Ticketcard.tsx";
 import {ChartPieGeneric} from "@/components/card/Ticketcard.tsx";
+import {useState} from "react";
 
 function App() {
 
 const {data: data} = useTicketData();
+    const [mesSelecionado] = useState<string>(() => {
+        const params = new URLSearchParams(window.location.search)
+        return params.get("mes") || ""
+    })
 
     return (
     <>
@@ -18,13 +23,16 @@ const {data: data} = useTicketData();
                 <ChartPieGeneric
                     data={data}
                     groupBy="fk_id_client"
-                    title="Chamados Por Cliente"
+                    mesSelecionado={mesSelecionado}
+                    title={data && data.length > 0 ? "Chamados Por Cliente" : ""}
+
                 />
 
                 <ChartPieGeneric
                     data={data}
                     groupBy="fk_id_module"
-                    title="Chamados Por Módulo"
+                    mesSelecionado={mesSelecionado}
+                    title={data && data.length > 0 ? "Chamados Por Módulo" : ""}
                 />
             </div>
         )}
@@ -32,13 +40,13 @@ const {data: data} = useTicketData();
         <div
             style={{
                 display: "flex",
-                justifyContent: "flex-start", // garante que o conteúdo vai pra esquerda
+                justifyContent: "flex-start",
                 width: "100%",
                 margin: 0,
                 padding: "0 2rem",
             }}
         >
-            <div style={{ width: "100%", maxWidth: "1200px" }}>
+            <div style={{ width: "100%" }}>
                 <TicketTable
                     data={
                         data?.map((ticket) => ({
@@ -50,6 +58,7 @@ const {data: data} = useTicketData();
                             module_id: String(ticket.fk_id_module),
                         })) ?? []
                     }
+
                 />
             </div>
         </div>

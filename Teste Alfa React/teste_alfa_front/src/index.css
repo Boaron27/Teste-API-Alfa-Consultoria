@@ -60,12 +60,16 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: block;
+    overflow-x: hidden;
+    background-color: whitesmoke;
 }
+
 
 h1 {
   font-size: 3.2em;

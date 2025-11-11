@@ -28,10 +28,30 @@ type Ticket = {
     module_id: string;
 };
 
+
+
 export function TicketTable({ data }: { data: Ticket[] }) {
-    const [mesSelecionado, setMesSelecionado] = useState<string>("")
+    const [mesSelecionado, setMesSelecionado] = useState<string>(() => {
+        const params = new URLSearchParams(window.location.search)
+        return params.get("mes") || ""
+    })
     const [newTickets, setNewTickets] = useState<Ticket[]>([])
     const [openDialog, setOpenDialog] = useState(false)
+
+    function handleMesChange(e: React.ChangeEvent<HTMLSelectElement>) {
+        const mes = e.target.value
+        setMesSelecionado(mes)
+
+        const url = new URL(window.location.href)
+        if (mes) {
+            url.searchParams.set("mes", mes)
+        } else {
+            url.searchParams.delete("mes")
+        }
+
+        window.history.pushState({}, "", url)
+        window.location.reload()
+    }
 
     const dataFiltrada = useMemo(() => {
         const combined = [...data, ...newTickets]
@@ -85,7 +105,7 @@ export function TicketTable({ data }: { data: Ticket[] }) {
     }
 
     return (
-        <div className="space-y-6 p-6 max-w-10xl mx-auto">
+        <div className="space-y-6 p-2 max-w-10xl mx-auto">
             <div className="flex items-center justify-between">
                 <form
                     className="flex items-center gap-2"
@@ -95,7 +115,7 @@ export function TicketTable({ data }: { data: Ticket[] }) {
                     <select
                         name="mes"
                         value={mesSelecionado}
-                        onChange={(e) => setMesSelecionado(e.target.value)}
+                        onChange={handleMesChange}
                         className="border rounded-md px-2 py-1"
                     >
                         <option value="">Todos</option>
@@ -233,7 +253,10 @@ export function TicketTable({ data }: { data: Ticket[] }) {
                     </table>
                 </div>
             </div>
+            <ChartPieGeneric
+                mesSelecionado={mesSelecionado} data={[]} groupBy={"opening_date"}            />
         </div>
+
     )
 }
 
@@ -246,65 +269,53 @@ type ChartPieGenericProps<T> = {
     data: T[]
     groupBy: keyof T
     title?: string
+    mesSelecionado?: string
 }
 
-export function ChartPieGeneric<T extends object>({
-                                                                       data,
-                                                                       groupBy,
-                                                                       title = "Distribuição",
-                                                                   }: ChartPieGenericProps<T>) {
-    if (!data || data.length === 0) {
-        return <p>Nenhum dado disponível.</p>
-    }
+export function ChartPieGeneric<T extends { opening_date?: string; closing_date?: string }>({
+                                                                                           data,
+                                                                                           groupBy,
+                                                                                           title = "",
+                                                                                           mesSelecionado = "",
+                                                                                       }: ChartPieGenericProps<T>) {
 
-    const grouped = data.reduce((acc, item) => {
+    // 🔹 aplica o filtro de mês aqui dentro
+    const dataFiltrada = useMemo(() => {
+        if (!mesSelecionado) return data
+        const indiceMes = MESES.indexOf(mesSelecionado) + 1
+
+        return data.filter((item) => {
+            const mesAbertura = item.opening_date ? parseInt(item.opening_date.split("-")[1]) : null
+            const mesFechamento = item.closing_date ? parseInt(item.closing_date.split("-")[1]) : null
+            return mesAbertura === indiceMes || mesFechamento === indiceMes
+        })
+    }, [data, mesSelecionado])
+
+
+
+    // 🔹 agrupa normalmente
+    const grouped = dataFiltrada.reduce((acc, item) => {
         const key = String(item[groupBy] ?? "Desconhecido")
         acc[key] = (acc[key] || 0) + 1
         return acc
     }, {} as Record<string, number>)
 
-    const chartData = Object.entries(grouped).map(([name, value]) => ({
-        name,
-        value,
-    }))
-
+    const chartData = Object.entries(grouped).map(([name, value]) => ({ name, value }))
     const total = chartData.reduce((acc, cur) => acc + cur.value, 0)
 
     return (
-        <div
-            style={{
-                display: "grid",
-                flexDirection: "column",
-                alignItems: "start",
-                gap: "1rem",
-            }}
-        >
+        <div style={{ display: "grid", gap: "1rem" }}>
+            <h3 style={{ margin: 0, textAlign: "center", fontWeight: "bold" }}>
+                {title}
+            </h3>
 
-            <h3 style={{ margin: 0, textAlign: "center", fontWeight: "bold" }}>{title}</h3>
-
-            <div
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "2rem",
-                }}
-            >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "2rem" }}>
                 <div style={{ width: 300, height: 300 }}>
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
-                            <Pie
-                                data={chartData}
-                                dataKey="value"
-                                nameKey="name"
-                                outerRadius={100}
-                                label
-                            >
+                            <Pie data={chartData} dataKey="value" nameKey="name" outerRadius={100} label>
                                 {chartData.map((_, index) => (
-                                    <Cell
-                                        key={`cell-${index}`}
-                                        fill={COLORS[index % COLORS.length]}
-                                    />
+                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                 ))}
                             </Pie>
                             <Tooltip />
@@ -312,14 +323,7 @@ export function ChartPieGeneric<T extends object>({
                     </ResponsiveContainer>
                 </div>
 
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "0.5rem",
-                        minWidth: "180px",
-                    }}
-                >
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", minWidth: "180px" }}>
                     {chartData.map((entry, index) => (
                         <div
                             key={entry.name}
