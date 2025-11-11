@@ -1,0 +1,5 @@
+bean\RevenueBean.class
+bean\RevenueBean$1.class
+model\Revenue.class
+com\mycompany\receitas_front\JakartaRestConfiguration.class
+com\mycompany\receitas_front\resources\JakartaEE10Resource.class
