@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Cliente {
+public class Module {
     @Id
     private Long id;
     private String name;

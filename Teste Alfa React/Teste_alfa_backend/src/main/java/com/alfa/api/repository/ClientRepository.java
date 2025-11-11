@@ -1,10 +1,10 @@
 package com.alfa.api.repository;
 
 
-import com.alfa.api.model.Cliente;
+import com.alfa.api.model.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface ClientRepository extends JpaRepository<Cliente, Long> {
+public interface ClientRepository extends JpaRepository<Client, Long> {
 
 }

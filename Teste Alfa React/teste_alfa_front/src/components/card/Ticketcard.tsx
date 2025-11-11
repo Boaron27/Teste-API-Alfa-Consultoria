@@ -28,6 +28,15 @@ type Ticket = {
     module_id: string;
 };
 
+type Client = {
+    id: number | string;
+    name: string;
+};
+
+type Module = {
+    id: number | string;
+    name: string;
+};
 
 
 export function TicketTable({ data }: { data: Ticket[] }) {
@@ -69,6 +78,8 @@ export function TicketTable({ data }: { data: Ticket[] }) {
         })
     }, [data, mesSelecionado, newTickets])
 
+    const [errorMessage, setErrorMessage] = useState<string>("")
+
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
         const form = e.currentTarget
@@ -83,11 +94,39 @@ export function TicketTable({ data }: { data: Ticket[] }) {
         }
 
         try {
+            setErrorMessage("") // limpa erros antigos
+
+            // Busca listas de clientes e módulos válidos
+            const [clientsRes, modulesRes] = await Promise.all([
+                fetch("http://localhost:8080/client"),
+                fetch("http://localhost:8080/module")
+            ])
+
+            if (!clientsRes.ok || !modulesRes.ok) {
+                throw new Error("Erro ao buscar listas de clientes e módulos")
+            }
+
+            const clients = await clientsRes.json()
+            const modules = await modulesRes.json()
+
+            const clientIds = clients.map((c: Client) => String(c.id))
+            const moduleIds = modules.map((m: Module) => String(m.id))
+
+            // Validação de integridade
+            if (!clientIds.includes(novoChamado.fk_id_client)) {
+                setErrorMessage("⚠️ O ID de cliente informado não existe.")
+                return
+            }
+
+            if (!moduleIds.includes(novoChamado.fk_id_module)) {
+                setErrorMessage("⚠️ O ID de módulo informado não existe.")
+                return
+            }
+
+            // Envia o chamado se tudo for válido
             const res = await fetch("http://localhost:8080/ticket", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(novoChamado),
             })
 
@@ -98,9 +137,11 @@ export function TicketTable({ data }: { data: Ticket[] }) {
 
             form.reset()
             setOpenDialog(false)
+            window.location.reload()
+
         } catch (err) {
             console.error(err)
-            alert("Erro ao salvar o chamado. Verifique o console.")
+            setErrorMessage("❌ Erro ao salvar o chamado. Verifique o console.")
         }
     }
 
@@ -196,6 +237,7 @@ export function TicketTable({ data }: { data: Ticket[] }) {
                                 </DialogClose>
                                 <Button type="submit" onClick={() => window.location.reload()} >Criar</Button>
                             </DialogFooter>
+                            <p className="text-red-500 text-sm font-medium mt-2">{errorMessage}</p>
                         </form>
                     </DialogContent>
                 </Dialog>

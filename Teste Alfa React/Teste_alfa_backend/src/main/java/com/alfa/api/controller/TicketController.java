@@ -25,7 +25,6 @@ public class TicketController {
     @Autowired
     private ModuleRepository moduleRepository;
 
-    // ✅ INSERT
     @PostMapping
     public TicketResponseDTO insert(@RequestBody TicketRequestDTO data) {
         Ticket ticket = new Ticket(data, clientRepository, moduleRepository);
@@ -33,7 +32,7 @@ public class TicketController {
         return new TicketResponseDTO(saved);
     }
 
-    // ✅ GET ALL
+
     @GetMapping
     public List<TicketResponseDTO> getAll() {
         return ticketRepository.findAll()

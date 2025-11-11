@@ -27,10 +27,10 @@ public class Ticket {
     private LocalDate closing_date;
     @ManyToOne
     @JoinColumn(name = "fk_id_client")
-    private Cliente client;
+    private Client client;
     @ManyToOne
     @JoinColumn(name = "fk_id_module")
-    private Modulo module;
+    private Module module;
 
     public Ticket(TicketRequestDTO data, ClientRepository clientRepository, ModuleRepository moduleRepository) {
         this.title = data.title();
@@ -75,19 +75,19 @@ public class Ticket {
         this.closing_date = closing_date;
     }
 
-    public Cliente getClient() {
+    public Client getClient() {
         return client;
     }
 
-    public void setClient(Cliente client) {
+    public void setClient(Client client) {
         this.client = client;
     }
 
-    public Modulo getModule() {
+    public Module getModule() {
         return module;
     }
 
-    public void setModule(Modulo module) {
+    public void setModule(Module module) {
         this.module = module;
     }
 }

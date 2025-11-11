@@ -18,7 +18,7 @@ const {data: data} = useTicketData();
 
         {data && data.length > 0 && (
             <div
-                style={{display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", justifyItems: "center", width: "100vw",gap: "4rem",}}>
+                style={{display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", justifyItems: "center", width: "100vw",gap: "4rem",marginTop: "4rem",}}>
 
                 <ChartPieGeneric
                     data={data}
