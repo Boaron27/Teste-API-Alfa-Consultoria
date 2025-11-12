@@ -18,7 +18,20 @@ Este guia descreve como configurar e rodar o projeto **Teste API Alfa Consultori
 
 Necessario a instalação do docker
 
-'docker-compose up -d'
+`docker-compose up -d`
+
+Certifique-se que o Docker está ativo com:
+
+`docker ps`
+
+Deve aparecer algo como:
+
+| Container ID   | Imagem                   | Comando                         | Status         | Porta Local → Container | Nome          |
+| -------------- | ------------------------ | ------------------------------- | -------------- | ----------------------- | ------------- |
+| `32c5a96c56b5` | `teste_alfa_backend-api` | `java -jar target/app.jar`      | Up (31 min) | `8080 → 8080`           | `spring_api`  |
+| `25e22c27c474` | `postgres:16`            | `docker-entrypoint.sh postgres` | Up (31 min) | `5432 → 5432`           | `postgres_db` |
+
+
 
 Irá iniciar o backend com suas dependencias e banco de dados PostgreSql
 
