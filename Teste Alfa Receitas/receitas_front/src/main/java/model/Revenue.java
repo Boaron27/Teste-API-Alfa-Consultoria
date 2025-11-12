@@ -9,6 +9,7 @@ package model;
  * @author Gabriel
  */
 public class Revenue {
+
     private String publisher;
     private String title;
     private String source_url;
@@ -16,7 +17,6 @@ public class Revenue {
     private String image_url;
     private double social_rank;
     private String publisher_url;
-
 
     public String getPublisher() {
         return publisher;
@@ -72,5 +72,16 @@ public class Revenue {
 
     public void setPublisher_url(String publisher_url) {
         this.publisher_url = publisher_url;
+    }
+
+    public int getStarRating() {
+        int stars = (int) Math.round(social_rank / 20.0);
+        if (stars < 0) {
+            stars = 0;
+        }
+        if (stars > 5) {
+            stars = 5;
+        }
+        return stars;
     }
 }

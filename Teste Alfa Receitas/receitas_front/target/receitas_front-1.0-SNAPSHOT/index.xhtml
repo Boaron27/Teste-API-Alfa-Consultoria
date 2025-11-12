@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
       xmlns:p="primefaces" lang="pt-br">
 
     <h:head>
-        <title>Busca de Receitas</title>
+        <title>Recipe Search</title>
+        <h:outputStylesheet library="css" name="style.css" />
     </h:head>
 
     <h:body style="margin: 2rem">
 
         <h:form id="formBusca">
-
-            <!-- Campo de busca -->
             <div class="card" style="padding: 1rem; text-align: center;">
-                <h3>Buscar Receita</h3>
+                <h3>Recipe Search</h3>
                 <p:inputText id="dishInput"
                              value="#{revenueBean.dish}"
-                             placeholder="Digite o nome do prato..."
+                             placeholder="Enter the name of the dish..."
                              style="width: 300px; margin-right: 10px" />
-                <p:commandButton value="Buscar"
+                <p:commandButton value="Search"
                                  icon="pi pi-search"
                                  update="carousel"
                                  actionListener="#{revenueBean.buscarReceitas}" />
             </div>
 
-            <!-- Carrossel de receitas -->
             <div class="card" style="margin-top: 2rem;">
                 <p:carousel id="carousel"
                             value="#{revenueBean.revenues}"
@@ -33,11 +30,8 @@
                             numVisible="3"
                             numScroll="3"
                             circular="true"
-                            autoplayInterval="5000">
+                            autoplayInterval="10000">
 
-                    <f:facet name="header">
-                        <h5>Receitas Encontradas</h5>
-                    </f:facet>
 
                     <div class="product-item">
                         <div class="product-item-content" style="text-align:center; padding:10px;">
@@ -47,14 +41,12 @@
                             <div>
                                 <h4 class="mb-1">#{r.title}</h4>
                                 <h6 class="mt-0 mb-3">#{r.publisher}</h6>
-                                <a href="#{r.source_url}" target="_blank">Ver Receita</a>
+                                <p:rating value="#{r.starRating}" readonly="true" stars="5" cancel="false" />
                             </div>
 
-                            <!-- Botões adicionais, igual ao exemplo -->
                             <div class="mt-3">
-                                <p:commandButton type="button" icon="pi pi-search" styleClass="rounded-button mr-2" />
-                                <p:commandButton type="button" icon="pi pi-star" styleClass="ui-button-success rounded-button mr-2" />
-                                <p:commandButton type="button" icon="pi pi-cog" styleClass="ui-button-help rounded-button" />
+                                <p/>
+                                <p:commandButton  type="button" icon="pi pi-search" styleClass="rounded-button mr-2" onclick="window.open('#{r.source_url}', '_blank')" />
                             </div>
                         </div>
                     </div>

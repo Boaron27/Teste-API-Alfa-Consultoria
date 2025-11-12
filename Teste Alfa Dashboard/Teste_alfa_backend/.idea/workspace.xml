@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11aa7487-802a-419d-b0cb-86cb81e49c99" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SETUP.md" beforeDir="false" afterPath="$PROJECT_DIR$/../SETUP.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Teste Alfa.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../teste_alfa_front/src/components/dashboard/TicketDashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../teste_alfa_front/src/components/dashboard/TicketDashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Teste Alfa Receitas/receitas_front/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../../Teste Alfa Receitas/receitas_front/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Teste Alfa Receitas/receitas_front/target/receitas_front-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../Teste Alfa Receitas/receitas_front/target/receitas_front-1.0-SNAPSHOT.war" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,16 +23,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -152,7 +147,8 @@
       <workItem from="1762910994130" duration="451000" />
       <workItem from="1762911903175" duration="15000" />
       <workItem from="1762915456134" duration="402000" />
-      <workItem from="1762916875280" duration="725000" />
+      <workItem from="1762916875280" duration="2239000" />
+      <workItem from="1762919903362" duration="16000" />
     </task>
     <servers />
   </component>

@@ -18,6 +18,19 @@ public class RevenueBean implements Serializable {
 
     private String dish;
     private List<Revenue> revenues = new ArrayList<>();
+    private Revenue receitaSelecionada;
+
+    public Revenue getReceitaSelecionada() {
+        return receitaSelecionada;
+    }
+
+    public void setReceitaSelecionada(Revenue receitaSelecionada) {
+        this.receitaSelecionada = receitaSelecionada;
+    }
+
+    public void selecionarReceita(Revenue receita) {
+        this.receitaSelecionada = receita;
+    }
 
     public String getDish() { return dish; }
     public void setDish(String dish) { this.dish = dish; }
@@ -46,11 +59,7 @@ public class RevenueBean implements Serializable {
 
             if (response.statusCode() == 200) {
                 ObjectMapper mapper = new ObjectMapper();
-
-                // Lê o JSON completo
                 JsonNode root = mapper.readTree(responseBody);
-
-                // A lista está dentro de "recipes"
                 JsonNode recipesNode = root.path("recipes");
 
                 if (recipesNode.isArray()) {
@@ -74,3 +83,4 @@ public class RevenueBean implements Serializable {
         }
     }
 }
+
