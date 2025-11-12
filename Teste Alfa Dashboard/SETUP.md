@@ -53,7 +53,7 @@ Certifique-se de que o frontend está configurado para acessar o backend em `htt
 
 ## Tecnologias Principais
 
-### 🔹 Frontend
+###  Frontend
 
 - React 19
 - Vite
@@ -63,7 +63,7 @@ Certifique-se de que o frontend está configurado para acessar o backend em `htt
 - React Query + React Table
 - Axios (requisições HTTP)
 
-### 🔹 Backend
+###  Backend
 
 - Spring Boot 3.5.7
 - Spring Data JPA
