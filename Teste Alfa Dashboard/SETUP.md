@@ -5,9 +5,13 @@ Este guia descreve como configurar e rodar o projeto **Teste API Alfa Consultori
 ## Pré-requisitos
 
 **Java** Version: 17+
+
 **Maven** Version: 3.9+  
+
 **Node.js** Version: 20+
+
 **npm** Version: 10+  
+
 **PostgreSQL** Version: 15+
 
 ## Backend
