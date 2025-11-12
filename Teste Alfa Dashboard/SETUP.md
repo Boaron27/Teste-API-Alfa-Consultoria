@@ -10,37 +10,13 @@ Este guia descreve como configurar e rodar o projeto **Teste API Alfa Consultori
 **npm** Version: 10+  
 **PostgreSQL** Version: 15+
 
-## Configuração do Banco de Dados
+## Backend
 
-Crie um banco de dados local:
+Necessario a instalação do docker
 
-CREATE DATABASE alfa_consultoria;
+'docker-compose up -d'
 
-Atualize o arquivo de configuração do Spring Boot:  
- Edite `backend/src/main/resources/application.properties` (ou `application.yml`) com suas credenciais:
-
-###
-
-spring.datasource.url=jdbc:postgresql://localhost:5432/Ticket
-spring.datasource.username=postgres
-spring.datasource.password=123
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-
-###
-
----
-
-## Backend(API)
-
-Instale dependências e rode no cmd:
-
-`mvn clean install`
-`mvn spring-boot:run`
-
-A API iniciará por padrão em:
-
-`http://localhost:8080`
+Irá iniciar o backend com suas dependencias e banco de dados PostgreSql
 
 ## Frontend
 
