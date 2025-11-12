@@ -1,0 +1,3 @@
+INSERT INTO TICKET (TITLE, FK_ID_CLIENT, OPENING_DATE, CLOSING_DATE, FK_ID_MODULE)
+VALUES (TRIM('Mussum Ipsum cacilds vidis litro  '), 2, '2021-03-21', '2021-03-25',
+        1

@@ -22,8 +22,8 @@ Atualize o arquivo de configuração do Spring Boot:
 ###
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/Ticket
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha
+spring.datasource.username=postgres
+spring.datasource.password=123
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 

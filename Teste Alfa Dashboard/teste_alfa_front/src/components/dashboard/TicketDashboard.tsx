@@ -114,12 +114,12 @@ export function TicketTable({ data }: { data: Ticket[] }) {
 
 
             if (!clientIds.includes(novoChamado.fk_id_client)) {
-                setErrorMessage("⚠️ O ID de cliente informado não existe.")
+                setErrorMessage("O ID de cliente informado não existe.")
                 return
             }
 
             if (!moduleIds.includes(novoChamado.fk_id_module)) {
-                setErrorMessage("⚠️ O ID de módulo informado não existe.")
+                setErrorMessage("O ID de módulo informado não existe.")
                 return
             }
 
@@ -141,7 +141,7 @@ export function TicketTable({ data }: { data: Ticket[] }) {
 
         } catch (err) {
             console.error(err)
-            setErrorMessage("❌ Erro ao salvar o chamado. Verifique o console.")
+            setErrorMessage("Erro ao salvar o chamado. Verifique o console.")
         }
     }
 
@@ -235,7 +235,7 @@ export function TicketTable({ data }: { data: Ticket[] }) {
                                         Cancelar
                                     </Button>
                                 </DialogClose>
-                                <Button type="submit" onClick={() => window.location.reload()} >Criar</Button>
+                                <Button type="submit">Criar</Button>
                             </DialogFooter>
                             <p className="text-red-500 text-sm font-medium mt-2">{errorMessage}</p>
                         </form>
@@ -320,7 +320,6 @@ export function ChartPieGeneric<T extends { opening_date?: string; closing_date?
                                                                                            title = "",
                                                                                            mesSelecionado = "",
                                                                                        }: ChartPieGenericProps<T>) {
-
 
     const dataFiltrada = useMemo(() => {
         if (!mesSelecionado) return data
