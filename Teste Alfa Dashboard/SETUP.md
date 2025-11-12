@@ -16,7 +16,7 @@ Este guia descreve como configurar e rodar o projeto **Teste API Alfa Consultori
 
 ## Backend
 
-Necessario a instalação do docker
+Necessario a instalação do docker:
 
 `docker-compose up -d`
 
@@ -33,7 +33,7 @@ Deve aparecer algo como:
 
 
 
-Irá iniciar o backend com suas dependencias e banco de dados PostgreSql
+Irá iniciar o backend com suas dependencias e banco de dados PostgreSql.
 
 ## Frontend
 
